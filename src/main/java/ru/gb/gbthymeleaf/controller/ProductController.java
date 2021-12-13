@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.gb.gbthymeleaf.entity.Product;
+import ru.gb.gbthymeleaf.service.CartService;
 import ru.gb.gbthymeleaf.service.ProductService;
 
 import java.time.LocalDate;
@@ -18,6 +19,7 @@ import java.time.LocalDate;
 public class ProductController {
 
     private final ProductService productService;
+
 
     @GetMapping("/all")
     public String getProductList(Model model) {
@@ -49,4 +51,6 @@ public class ProductController {
         productService.deleteById(id);
         return "redirect:/product/all";
     }
+
+
 }
